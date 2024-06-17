@@ -5,6 +5,16 @@
 
         <hr>
 
+        {% if announcements %}
+        <ul>
+            {% for announcement in announcements %}
+            <li>
+                {{announcement}}
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
         {% block content%}
         {% endblock %}
 

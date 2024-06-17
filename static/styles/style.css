@@ -1,0 +1,16 @@
+.mainbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-feed {
+    display: block;
+    unicode-bidi: isolate;
+}
+.main-feed {
+    padding-top: 24px;
+}
+
+.Layout_mainWrapper {
+    grid-area: main;
+}
