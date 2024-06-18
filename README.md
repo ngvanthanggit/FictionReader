@@ -1,1 +1,2 @@
-# Mangas
+# Fiction Reader
+## Build with Django
