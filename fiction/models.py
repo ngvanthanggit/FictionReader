@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 
-class Manga(models.Model):
+class Fiction(models.Model):
     #author =
     name = models.CharField(max_length=250)
     story = models.TextField(null=True, blank=True)
