@@ -28,7 +28,7 @@ INSTALLED_APPS = [
     'fiction.apps.FictionConfig',
     'accounts.apps.AccountsConfig',
     'search.apps.SearchConfig',
-    'reast_framework',
+    'rest_framework',
     'corsheaders',
 ]
 
