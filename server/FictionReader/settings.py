@@ -1,5 +1,7 @@
 from pathlib import Path
 
+import os
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -25,11 +27,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'accounts.apps.AccountsConfig',
-    'fiction.apps.FictionConfig',
-    'chapter.apps.ChapterConfig',
-    'genre.apps.GenreConfig',
-    'search.apps.SearchConfig',
+    'server.accounts.apps.AccountsConfig',
+    'server.fiction.apps.FictionConfig',
+    'server.chapter.apps.ChapterConfig',
+    'server.genre.apps.GenreConfig',
+    'server.search.apps.SearchConfig',
     'rest_framework',
     'corsheaders',
 ]
@@ -59,7 +61,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            BASE_DIR / 'templates'
+            os.path.join(BASE_DIR, 'server', 'templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -107,11 +109,15 @@ AUTH_PASSWORD_VALIDATORS = [
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    BASE_DIR / 'static',
+    os.path.join(BASE_DIR, 'server', 'static')
 ]
 
 MEDIA_URL = 'media/'
-MEDIA_ROOT = BASE_DIR / 'static/media'
+MEDIA_ROOT = [
+    os.path.join(BASE_DIR, 'backend', 'static/media')
+]
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Internationalization
@@ -135,3 +141,13 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Security settings
+CSRF_COOKIE_SAMESITE = 'Strict'
+SESSION_COOKIE_SAMESITE = 'Strict'
+CSRF_COOKIE_HTTPONLY = False
+SESSION_COOKIE_HTTPONLY = True
+
+# For production, set these lines to True
+# CSRF_COOKIE_HTTPONLY = True
+# SESSION_COOKIE_HTTPONLY = True
