@@ -8,9 +8,9 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name="home"),
-    path('fiction/', include('server.fiction.urls')),
-    path('accounts/', include('server.accounts.urls')),
-    path('search/', include('server.search.urls')),
+    path('fiction/', include('fiction.urls')),
+    path('accounts/', include('accounts.urls')),
+    path('search/', include('search.urls')),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

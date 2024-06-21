@@ -17,6 +17,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 
 # Application definition
 
@@ -27,11 +29,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'server.accounts.apps.AccountsConfig',
-    'server.fiction.apps.FictionConfig',
-    'server.chapter.apps.ChapterConfig',
-    'server.genre.apps.GenreConfig',
-    'server.search.apps.SearchConfig',
+    'accounts.apps.AccountsConfig',
+    'fiction.apps.FictionConfig',
+    'chapter.apps.ChapterConfig',
+    'genre.apps.GenreConfig',
+    'search.apps.SearchConfig',
     'rest_framework',
     'corsheaders',
 ]
@@ -61,7 +63,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'server', 'templates'),
+            BASE_DIR / 'templates'
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -109,15 +111,13 @@ AUTH_PASSWORD_VALIDATORS = [
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'server', 'static')
+    BASE_DIR / 'static'
 ]
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = [
-    os.path.join(BASE_DIR, 'backend', 'static/media')
+    BASE_DIR / 'static/media'
 ]
-
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Internationalization
