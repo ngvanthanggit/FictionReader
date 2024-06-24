@@ -17,8 +17,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 
 # Application definition
 
@@ -63,7 +61,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            BASE_DIR / 'templates'
+            BASE_DIR.joinpath('frontend')
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -110,9 +108,9 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [
-    BASE_DIR / 'static'
-]
+STATICFILES_DIRS = (
+    BASE_DIR.joinpath('frontend', 'dist'),
+)
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = [

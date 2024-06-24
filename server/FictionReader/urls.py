@@ -2,12 +2,16 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.shortcuts import render
 
 from . import views
 
+def index_view(request):
+    return render(request, 'dist/index.html')
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name="home"),
+    path('', index_view, name="index"),
     path('fiction/', include('fiction.urls')),
     path('accounts/', include('accounts.urls')),
     path('search/', include('search.urls')),
