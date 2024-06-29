@@ -10,8 +10,11 @@ from django.views.decorators.http import require_POST
 @require_POST
 def login_view(request):
     data = json.loads(request.body)
-    username = data.get("username")
-    password = data.get("password")
+    username = data.get("login_username")
+    password = data.get("login_password")
+    
+    if username == "":
+        print(username, password)
     
     if username is None or password is None:
         return JsonResponse({"detail": "Please provide username and password"})

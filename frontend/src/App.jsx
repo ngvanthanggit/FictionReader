@@ -20,14 +20,14 @@ class App extends React.Component {
   }
 
   getSession = () => {
-    fetch("/accounts/session", {
+    fetch("/accounts/session/", {
       credential: "same-origin",
     })
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
       if (data.isauthenticated) {
-        this.getSnapshotBeforeUpdate({isauthenticated: true});
+        this.getState({isauthenticated: true});
       }
       else {
         this.setState({isauthenticated: false});
@@ -72,6 +72,7 @@ class App extends React.Component {
   }
 
   login = (event) => {
+    console.log(this.state.username)
     event.preventDefault();
     fetch("accounts/login/", {
       method: "POST",
@@ -127,12 +128,15 @@ class App extends React.Component {
           <form onSubmit={this.login}>
             <div className="form-group">
               <label htmlFor="username"> Username </label>
-              <input type="text" className='form-control' id="username"></input>
+              <input type="text" className='form-control' 
+              name="login_username" id="username"
+              value={this.state.username}
+              onChange={this.handleUsernameChange}></input>
             </div>  
             <div className="form-group">
               <label htmlFor="password"> Password </label>
               <input type="password" className='form-control' 
-              id="password" name="password" 
+              name="login_password" id="password" 
               value={this.state.password} 
               onChange={this.handlePasswordChange}></input>
               <div>
