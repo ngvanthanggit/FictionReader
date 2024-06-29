@@ -11,7 +11,7 @@ def index_view(request):
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index_view, name="index"),
+    path('', views.home, name="home"),
     path('fiction/', include('fiction.urls')),
     path('accounts/', include('accounts.urls')),
     path('search/', include('search.urls')),

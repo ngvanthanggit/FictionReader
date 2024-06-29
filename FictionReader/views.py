@@ -1,9 +1,10 @@
 from django.shortcuts import render
 
-from accounts import models
-from fiction import models
-from search import models
+from accounts.models import User
+from fiction.models import Fiction
+from category.models import Category
 
 def home(request):
-    context = {}
+    categories = Category.objects.all()
+    context = {'categories': categories}
     return render(request, 'home.html', context)

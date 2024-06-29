@@ -1,3 +1,4 @@
-from accounts import models
-from fiction import models
-from search import models
+from accounts.models import *
+from fiction.models import *
+from genre.models import *
+from search.models import *

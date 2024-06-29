@@ -13,6 +13,22 @@
         <div>
             <img src=""> Feed Poster </img>
         </div>
+
+        {% for category in categories %}
+        <div>
+            <div>
+                <img src=""> </img>
+                {{category.name}}
+            </div>
+            <div>
+                {% for fiction in category.fictions %}
+                <a href="{% url 'fiction_page' fiction.id %}">
+                    <img src=""> {{fiction.poster}} </img>
+                    {{fiction}}
+                </a>
+            </div>
+        </div>
+        {% endfor %}
     </div>
 </div>
 

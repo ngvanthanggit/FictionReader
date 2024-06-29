@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts.apps.AccountsConfig',
     'fiction.apps.FictionConfig',
+    'category.apps.CategoryConfig',
     'chapter.apps.ChapterConfig',
     'genre.apps.GenreConfig',
     'search.apps.SearchConfig',
@@ -61,7 +62,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            BASE_DIR.joinpath('frontend')
+            BASE_DIR.joinpath('frontend'),
+            BASE_DIR.joinpath('templates')
         ],
         'APP_DIRS': True,
         'OPTIONS': {
