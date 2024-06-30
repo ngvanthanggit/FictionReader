@@ -14,3 +14,42 @@
 .Layout_mainWrapper {
     grid-area: main;
 }
+
+.small_thumbnail {
+    width: 200px; 
+    height: 130px; 
+    border: 3px solid #000; 
+    border-radius: 5%;
+}
+
+.category-container {
+    display: flex;
+    align-items: center;
+}
+.category-container img {
+    margin-right: 10px;
+}
+
+.fiction-homepage-wrapper {
+    margin: 30px;
+}
+
+.fiction-fictionpage-poster {
+    width: 100%;
+    height: 450px;
+}
+
+.fictionpage-wrapper--2 > .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.fictionpage-wrapper--2 > .container > div:first-child {
+    flex-basis: 20%;
+}
+
+.fictionpage-wrapper--2 > .container > div:last-child {
+    flex-basis: 76%;
+}

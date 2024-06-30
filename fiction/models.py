@@ -10,7 +10,8 @@ class Fiction(models.Model):
     title = models.CharField(max_length=250)
     about = models.TextField(null=True, blank=True)
     genre = models.ManyToManyField(Genre, blank=True)
-    poster = models.ImageField(null=True)
+    poster_fictionpage = models.ImageField(null=True)
+    poster_homepage = models.ImageField(null=True)
     
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)

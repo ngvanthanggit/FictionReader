@@ -2,7 +2,9 @@
 
 {% block content %}
 
-<h1> Welcome to Mangas </h1>
+{% load static %}
+
+<h1> Welcome to FictionReader </h1>
 
 <div class="Layout_mainWrapper">
     <div class="main-feed">
@@ -11,21 +13,28 @@
             </ul>
         </nav>
         <div>
-            <img src=""> Feed Poster </img>
+            <img src=""> *Feed Poster* </img>
         </div>
 
         {% for category in categories %}
         <div>
-            <div>
-                <img src=""> </img>
-                {{category.name}}
+            <div class="category-container">
+                <img src="{% static 'media/tagimage.svg' %}"> </img>
+                <span><h2>{{category.name}}</h2></span>
             </div>
             <div>
-                {% for fiction in category.fictions %}
-                <a href="{% url 'fiction_page' fiction.id %}">
-                    <img src=""> {{fiction.poster}} </img>
-                    {{fiction}}
-                </a>
+                {% for fiction in category.fictions.all %}
+                <div class="fiction-homepage-wrapper">
+                    <a href="{% url 'fiction_page' fiction.id %}">
+                        <img src="{{ fiction.poster_homepage.url }}" 
+                        class="small_thumbnail"></img>
+                    </a>
+                    </br>
+                    <a href="{% url 'fiction_page' fiction.id %}">
+                        {{fiction.title}}
+                    </a>
+                </div>
+                {% endfor %}
             </div>
         </div>
         {% endfor %}
