@@ -53,3 +53,11 @@
 .fictionpage-wrapper--2 > .container > div:last-child {
     flex-basis: 76%;
 }
+
+.navbar-rightcorner {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 10px;
+    place-content: center;
+    place-items: center;
+}
