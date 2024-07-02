@@ -4,21 +4,19 @@
 
 {% load static %}
 
-<h1> Welcome to FictionReader </h1>
-
 <div class="Layout_mainWrapper">
+    <h1 style="padding: 5%"> Welcome to FictionReader </h1>
     <div class="main-feed">
         <nav>
             <ul>
             </ul>
         </nav>
-        <div>
+        <div class="main-feed-poster">
             <img src=""> *Feed Poster* </img>
         </div>
-
-        <div>
-            {% for category in categories %}
-            <div class="category-container">
+        {% for category in categories %}
+        <div class="feed-section">
+            <div class="category-header">
                 <img src="{% static 'media/tagimage.svg' %}"> </img>
                 <span><h2>{{category.name}}</h2></span>
             </div>
@@ -26,7 +24,7 @@
             <div class="feed-wrapper">
                 <div class="feed-grid-container">
                     {% for fiction in category.fictions.all %}
-                    <div class="fiction-homepage-wrapper">
+                    <div class="fiction-details-wrapper">
                         <a href="{% url 'fiction_page' fiction.id %}">
                             <img src="{{ fiction.poster_homepage.url }}" 
                             class="small_thumbnail"></img>
@@ -39,8 +37,8 @@
                     {% endfor %}
                 </div>
             </div>
-            {% endfor %}
         </div>
+        {% endfor %}
     </div>
 </div>
 
