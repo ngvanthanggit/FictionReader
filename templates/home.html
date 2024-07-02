@@ -16,28 +16,31 @@
             <img src=""> *Feed Poster* </img>
         </div>
 
-        {% for category in categories %}
         <div>
+            {% for category in categories %}
             <div class="category-container">
                 <img src="{% static 'media/tagimage.svg' %}"> </img>
                 <span><h2>{{category.name}}</h2></span>
             </div>
-            <div>
-                {% for fiction in category.fictions.all %}
-                <div class="fiction-homepage-wrapper">
-                    <a href="{% url 'fiction_page' fiction.id %}">
-                        <img src="{{ fiction.poster_homepage.url }}" 
-                        class="small_thumbnail"></img>
-                    </a>
-                    </br>
-                    <a href="{% url 'fiction_page' fiction.id %}">
-                        {{fiction.title}}
-                    </a>
+            <br>
+            <div class="feed-wrapper">
+                <div class="feed-grid-container">
+                    {% for fiction in category.fictions.all %}
+                    <div class="fiction-homepage-wrapper">
+                        <a href="{% url 'fiction_page' fiction.id %}">
+                            <img src="{{ fiction.poster_homepage.url }}" 
+                            class="small_thumbnail"></img>
+                        </a>
+                        </br>
+                        <a href="{% url 'fiction_page' fiction.id %}">
+                            {{fiction.title}}
+                        </a>
+                    </div>
+                    {% endfor %}
                 </div>
-                {% endfor %}
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
 </div>
 

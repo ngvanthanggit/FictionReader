@@ -2,6 +2,17 @@
     display: flex;
     justify-content: space-between;
 }
+.Layout_mainWrapper {
+    grid-area: main;
+}
+
+/* Homepage Feed */
+.category-container {
+    display: flex;
+}
+.category-container img {
+    margin-right: 10px;
+}
 
 .main-feed {
     display: block;
@@ -11,8 +22,18 @@
     padding-top: 24px;
 }
 
-.Layout_mainWrapper {
-    grid-area: main;
+.feed-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+.feed-grid-container {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    width: 70%;
 }
 
 .small_thumbnail {
@@ -22,16 +43,9 @@
     border-radius: 5%;
 }
 
-.category-container {
-    display: flex;
-    align-items: center;
-}
-.category-container img {
-    margin-right: 10px;
-}
-
 .fiction-homepage-wrapper {
-    margin: 30px;
+    margin: 5px;
+    text-align: center;
 }
 
 .fiction-fictionpage-poster {
