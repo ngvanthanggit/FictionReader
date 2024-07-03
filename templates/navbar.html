@@ -14,14 +14,24 @@
       <a href="{% url 'home' %}"> <h1>Logo</h1> </a>
     </div>
     <div class="navbar-rightcorner">
-      <a class="navbar-rightcorner-button" href=""> Search </a>
-      <a class="navbar-rightcorner-button" href=""> Menu </a>
       <a class="navbar-rightcorner-button" href="">
         {% if request.user.isauthenticated %}
         <p>Logout</p>
         {% else %}
         <p>Login</p>
         {% endif %}
+      </a>
+      <a class="navbar-rightcorner-button" href="">
+        <img
+          src="{% static 'icons/search (1).png' %}"
+          style="width: 32px; height: 32px"
+        />
+      </a>
+      <a class="navbar-rightcorner-button" href="">
+        <img
+          src="{% static 'icons/menu.png' %}"
+          style="width: 32px; height: 32px"
+        />
       </a>
     </div>
   </div>

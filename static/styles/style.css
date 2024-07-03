@@ -20,7 +20,7 @@ body, html {
 .navbar-rightcorner {
     display: grid;
     grid-auto-flow: column;
-    gap: 10px;
+    gap: 20px;
     place-content: center;
     place-items: center;
 }
