@@ -33,8 +33,10 @@ def login_view(request):
     return render(request, 'accounts/login_page.html')
 
 def logout_view(request):
-    context = {}
-    return render(request, 'home.html', context)
+    if request.user is None:
+        messages(request, 'You have not logged in yet')
+    logout(request)
+    return redirect('home')
 
 
 # @require_POST

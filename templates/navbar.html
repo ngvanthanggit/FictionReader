@@ -16,6 +16,9 @@
     <div class="navbar-rightcorner">
       {% if request.user.is_authenticated %}
       <a class="navbar-rightcorner-button" href="">
+        <p>{{request.user.username}}</p>
+      </a>
+      <a class="navbar-rightcorner-button" href="{% url 'accounts_logout' %}">
         <p>Logout</p>
       </a>
       {% else %}
