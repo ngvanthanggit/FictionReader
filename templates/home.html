@@ -26,7 +26,7 @@
                     {% for fiction in category.fictions.all %}
                     <div class="fiction-details-wrapper">
                         <a href="{% url 'fiction_page' fiction.id %}">
-                            <img src="{{ fiction.poster_homepage.url }}" 
+                            <img src="{{ fiction.poster.url }}" 
                             class="small_thumbnail"></img>
                         </a>
                         </br>
