@@ -15,14 +15,14 @@
 
 <ul>
     {% for fiction in results %} 
-    <li class="fiction-card-small">
+    <li class="fiction-card-small-browse">
         <a href="{% url 'fiction_page' fiction.id %}">
-            <img src="{{fiction.poster.url}}" class="small_thumbnail"></img>
+            <img src="{{fiction.poster.url}}" class="fiction-thumbnail-small-browse"></img>
         </a>
         <div class="details">
-            <h3>
+            <a class="fiction-title-small-browse" href="{% url 'fiction_page' fiction.id %}">
                 {{fiction.title}}
-            </h3>
+            </a>
             <div>
                 *Rating*
             </div>

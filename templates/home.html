@@ -24,13 +24,12 @@
             <div class="feed-wrapper">
                 <div class="feed-grid-container">
                     {% for fiction in category.fictions.all %}
-                    <div class="fiction-details-wrapper">
+                    <div class="fiction-card-small">
                         <a href="{% url 'fiction_page' fiction.id %}">
                             <img src="{{ fiction.poster.url }}" 
-                            class="small_thumbnail"></img>
+                            class="fiction-thumbnail-small"></img>
                         </a>
-                        </br>
-                        <a href="{% url 'fiction_page' fiction.id %}">
+                        <a class="fiction-title-small" href="{% url 'fiction_page' fiction.id %}">
                             {{fiction.title}}
                         </a>
                     </div>

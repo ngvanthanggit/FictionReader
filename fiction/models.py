@@ -21,4 +21,4 @@ class Fiction(models.Model):
     def __str__(self):
         return self.title
     def short_brief(self):
-        return f"{self.about[:50]}..."
+        return f"{self.about[:150]}..."
