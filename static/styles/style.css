@@ -118,11 +118,21 @@ body, html {
     margin: 10px;
 }
 
+.fiction-thumbnail-small-wrapper {
+    display: inline-block;
+    overflow: hidden;
+    border: 1px solid #000;
+    border-radius: 3%;
+    height: 140px;
+}
 .fiction-thumbnail-small { 
     width: 100%;
-    height: 140px; 
-    border: 1px solid #000; 
-    border-radius: 5%;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.fiction-thumbnail-small:hover {
+    transform: scale(1.1);
 }
 
 .fiction-title-small {
@@ -136,6 +146,10 @@ body, html {
     overflow: hidden;
     text-overflow: ellipsis; /* Display ellipsis (...) at the end */
 }
+
+/* End Fiction Card */
+
+/* Fiction Card Browse */
 
 .fiction-card-small-browse {
     display: flex;
@@ -153,13 +167,24 @@ body, html {
 }
 .fiction-card-small-browse .details {
     margin-left: 10px;
+    max-width: 80%;
 }
 
-.fiction-thumbnail-small-browse {
+.fiction-thumbnail-small-browse-wrapper {
+    display: inline-block;
+    overflow: hidden;
+    border: 1px solid #000;
+    border-radius: 3%;
     width: 100px;
-    height: 140px; 
-    border: 1px solid #000; 
-    border-radius: 5%;
+    height: 140px;
+}
+.fiction-thumbnail-small-browse {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+.fiction-thumbnail-small-browse:hover {
+    transform: scale(1.1);
 }
 
 .fiction-title-small-browse {
@@ -174,9 +199,10 @@ body, html {
     font-weight: bold;
 }
 
-/* End Fiction Card */
+/* End Fiction Card Browse */
 
 /* End Homepage Feed */
+
 
 /* Fiction page */
 

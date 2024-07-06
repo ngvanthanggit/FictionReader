@@ -16,7 +16,7 @@
 <ul>
     {% for fiction in results %} 
     <li class="fiction-card-small-browse">
-        <a href="{% url 'fiction_page' fiction.id %}">
+        <a class="fiction-thumbnail-small-browse-wrapper" href="{% url 'fiction_page' fiction.id %}">
             <img src="{{fiction.poster.url}}" class="fiction-thumbnail-small-browse"></img>
         </a>
         <div class="details">

@@ -25,7 +25,7 @@
                 <div class="feed-grid-container">
                     {% for fiction in category.fictions.all %}
                     <div class="fiction-card-small">
-                        <a href="{% url 'fiction_page' fiction.id %}">
+                        <a class="fiction-thumbnail-small-wrapper" href="{% url 'fiction_page' fiction.id %}">
                             <img src="{{ fiction.poster.url }}" 
                             class="fiction-thumbnail-small"></img>
                         </a>
