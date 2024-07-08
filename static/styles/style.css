@@ -27,6 +27,22 @@ body, html {
     place-content: center;
     place-items: center;
 }
+.navbar-leftcorner {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 20px;
+    place-content: center;
+    place-items: center;
+}
+.navbar-leftcorner-item {
+    display: flex;
+    align-items: center;
+}
+.no-bullets {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
 
 /* End Navigation Bar */
 
