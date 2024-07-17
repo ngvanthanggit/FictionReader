@@ -73,3 +73,8 @@ def logout_view(request):
 #     if not request.user.is_authenticated:
 #         return JsonResponse({"isauthenticated": False})
 #     return JsonResponse({"username": request.user.username})
+
+def profile_view(request, username):
+    user = User.objects.get(username=username)
+    context = {'user': user}
+    return render(request, 'accounts/profile_page.html', context)

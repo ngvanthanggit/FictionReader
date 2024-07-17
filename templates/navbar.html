@@ -80,7 +80,7 @@
     </div>
     <div class="navbar-rightcorner">
       {% if request.user.is_authenticated %}
-      <a class="navbar-rightcorner-button" href="">
+      <a class="navbar-rightcorner-button" href="{% url 'profile_view' request.user.username %}">
         <p>{{request.user.username}}</p>
       </a>
       <a class="navbar-rightcorner-button" href="{% url 'accounts_logout' %}">
