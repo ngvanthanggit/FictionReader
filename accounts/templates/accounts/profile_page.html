@@ -1,5 +1,192 @@
-{% extends 'main.html' %} {% block content %}
+{% extends 'main.html' %} {% block content %} {% comment %}
+<div class="profile_container">
+  <div class="profile_card">
+    <div class="profile_wall_paper"></div>
+    <div class="profile_avatar">
+      <img src="{{user.avatar.url}}" />
+    </div>
+    <div class="profile_information">
+      <div class="profile_username">
+        <p>{{user.username}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endcomment %}
 
-<h1>Profile page {{user.username}}</h1>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script
+      src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js"
+      defer
+      init
+    ></script>
+    <script type="text/javascript">
+      window.tailwind.config = {
+        darkMode: ["class"],
+        theme: {
+          extend: {
+            colors: {
+              border: "hsl(var(--border))",
+              input: "hsl(var(--input))",
+              ring: "hsl(var(--ring))",
+              background: "hsl(var(--background))",
+              foreground: "hsl(var(--foreground))",
+              primary: {
+                DEFAULT: "hsl(var(--primary))",
+                foreground: "hsl(var(--primary-foreground))",
+              },
+              secondary: {
+                DEFAULT: "hsl(var(--secondary))",
+                foreground: "hsl(var(--secondary-foreground))",
+              },
+              destructive: {
+                DEFAULT: "hsl(var(--destructive))",
+                foreground: "hsl(var(--destructive-foreground))",
+              },
+              muted: {
+                DEFAULT: "hsl(var(--muted))",
+                foreground: "hsl(var(--muted-foreground))",
+              },
+              accent: {
+                DEFAULT: "hsl(var(--accent))",
+                foreground: "hsl(var(--accent-foreground))",
+              },
+              popover: {
+                DEFAULT: "hsl(var(--popover))",
+                foreground: "hsl(var(--popover-foreground))",
+              },
+              card: {
+                DEFAULT: "hsl(var(--card))",
+                foreground: "hsl(var(--card-foreground))",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      @layer base {
+        :root {
+          --background: 0 0% 100%;
+          --foreground: 240 10% 3.9%;
+          --card: 0 0% 100%;
+          --card-foreground: 240 10% 3.9%;
+          --popover: 0 0% 100%;
+          --popover-foreground: 240 10% 3.9%;
+          --primary: 240 5.9% 10%;
+          --primary-foreground: 0 0% 98%;
+          --secondary: 240 4.8% 95.9%;
+          --secondary-foreground: 240 5.9% 10%;
+          --muted: 240 4.8% 95.9%;
+          --muted-foreground: 240 3.8% 46.1%;
+          --accent: 240 4.8% 95.9%;
+          --accent-foreground: 240 5.9% 10%;
+          --destructive: 0 84.2% 60.2%;
+          --destructive-foreground: 0 0% 98%;
+          --border: 240 5.9% 90%;
+          --input: 240 5.9% 90%;
+          --ring: 240 5.9% 10%;
+          --radius: 0.5rem;
+        }
+        .dark {
+          --background: 240 10% 3.9%;
+          --foreground: 0 0% 98%;
+          --card: 240 10% 3.9%;
+          --card-foreground: 0 0% 98%;
+          --popover: 240 10% 3.9%;
+          --popover-foreground: 0 0% 98%;
+          --primary: 0 0% 98%;
+          --primary-foreground: 240 5.9% 10%;
+          --secondary: 240 3.7% 15.9%;
+          --secondary-foreground: 0 0% 98%;
+          --muted: 240 3.7% 15.9%;
+          --muted-foreground: 240 5% 64.9%;
+          --accent: 240 3.7% 15.9%;
+          --accent-foreground: 0 0% 98%;
+          --destructive: 0 62.8% 30.6%;
+          --destructive-foreground: 0 0% 98%;
+          --border: 240 3.7% 15.9%;
+          --input: 240 3.7% 15.9%;
+          --ring: 240 4.9% 83.9%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="bg-background p-6 rounded-lg shadow-md mx-auto max-w-md lg:max-w-2xl"
+    >
+      <div class="relative">
+        <img
+          src="{{user.wallpaper.url}}"
+          alt="Profile Background"
+          class="w-full h-64 object-cover rounded-t-lg"
+        />
+        <div class="absolute left-4 lg:left-4 top-48">
+          <img
+            src="{{user.avatar.url}}"
+            alt="User Avatar"
+            class="rounded-full border-4 border-white w-32 h-32"
+          />
+        </div>
+      </div>
+      <div class="mt-16">
+        <h1 class="text-2xl font-bold text-foreground">
+          {{user.username}} <span class="text-muted">📖</span>
+        </h1>
+        <p class="text-muted-foreground">2023-08-03 Joined</p>
+        <p class="text-muted-foreground">Australia</p>
+        <div class="mt-4 flex items-center">
+          <span class="text-xl font-semibold text-primary">251.5h</span>
+          <span class="text-muted-foreground ml-2">of Reading</span>
+          <span class="ml-auto text-xl font-semibold text-primary">28</span>
+          <span class="text-muted-foreground ml-2">Read books</span>
+        </div>
+        <div class="mt-4">
+          <h2 class="text-lg font-semibold">Badges</h2>
+          <div class="flex space-x-2 mt-2">
+            <img
+              src="https://placehold.co/40x40?text=Badge1"
+              alt="Badge 1"
+              class="w-10 h-10"
+            />
+            <img
+              src="https://placehold.co/40x40?text=Badge2"
+              alt="Badge 2"
+              class="w-10 h-10"
+            />
+            <img
+              src="https://placehold.co/40x40?text=Badge3"
+              alt="Badge 3"
+              class="w-10 h-10"
+            />
+            <img
+              src="https://placehold.co/40x40?text=Badge4"
+              alt="Badge 4"
+              class="w-10 h-10"
+            />
+            <img
+              src="https://placehold.co/40x40?text=Badge5"
+              alt="Badge 5"
+              class="w-10 h-10"
+            />
+          </div>
+        </div>
+        <div class="mt-4">
+          <button
+            class="bg-secondary text-secondary-foreground hover:bg-secondary/80 p-2 rounded"
+          >
+            Follow
+          </button>
+          <span class="text-muted-foreground ml-4">❤️ 4.2K</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
 
 {% endblock %}
