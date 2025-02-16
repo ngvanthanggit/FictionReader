@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'api.apps.ApiConfig',
     'rest_framework',
     'corsheaders',
+    'drf_yasg',
 ]
 
 AUTH_USER_MODEL = 'accounts.User'
