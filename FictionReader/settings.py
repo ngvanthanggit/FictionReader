@@ -1,5 +1,7 @@
 from pathlib import Path
 
+from rest_framework import permissions
+
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -33,8 +35,10 @@ INSTALLED_APPS = [
     'chapter.apps.ChapterConfig',
     'genre.apps.GenreConfig',
     'search.apps.SearchConfig',
+    'api.apps.ApiConfig',
     'rest_framework',
     'corsheaders',
+    'drf_yasg',
 ]
 
 AUTH_USER_MODEL = 'accounts.User'
@@ -51,7 +55,7 @@ MIDDLEWARE = [
 ]
 
 REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': ['rest_framework.permission.AllowAny']
+    'DEFAULT_PERMISSION_CLASSES': ['rest_framework.permissions.AllowAny']
 }
 
 CORS_ORIGIN_ALLOW_ALL = True
