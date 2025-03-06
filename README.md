@@ -5,6 +5,7 @@ I used to read fiction online. I made this project as a hobby!
 ## Built With
 * [![Django][Django.com]][Django-url]
 * [![DjangoRestframework][DjangoRestframework]][DjangoRestframework-url]
+* [![Swagger][Swagger.io]][Swagger-url]
 
 ## Getting Started
 This is how you create a local version of this platform.
@@ -57,3 +58,5 @@ Project Link: [https://github.com/ngvanthanggit/FriendStardi](https://github.com
 [Django-url]: https://www.djangoproject.com/
 [DjangoRestframework]: https://img.shields.io/badge/django--rest--framework-3.12.4-blue?style=for-the-badge&labelColor=333333&logo=django&logoColor=white&color=blue
 [DjangoRestframework-url]: https://www.django-rest-framework.org/
+[Swagger.io]: https://img.shields.io/badge/-Swagger-%23Clojure?style=for-the-badge&logo=swagger&logoColor=white
+[Swagger-url]: https://swagger.io/
