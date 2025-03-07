@@ -50,7 +50,7 @@ This is how you create a local version of this platform.
 
 Thang Nguyen Van - [@ngvanthangig](https://www.instagram.com/ngvanthangig/) - thangitcbg@gmail.com
 
-Project Link: [https://github.com/ngvanthanggit/FriendStardi](https://github.com/ngvanthanggit/FriendStardi)
+Project Link: [https://github.com/ngvanthanggit/FictionReader](https://github.com/ngvanthanggit/FictionReader)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
